@@ -23,7 +23,7 @@ def rand(num_1, num_2):
 def rand2(num_1, num_2):
     N = 10
     list_rand = [random.randint(num_1, num_2) for _ in range(N)]
-    dict_rand = {f'elem_{i}': list_rand[i] for i in range(N)}
+    dict_rand = {f'elem_{i}': el for i, el in enumerate(list_rand)}
 
     return list_rand, dict_rand
 
