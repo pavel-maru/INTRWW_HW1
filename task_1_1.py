@@ -5,14 +5,14 @@
 # Полученная строка выводится в главной функции. Элементы строки (элементы таблицы
 # умножения) должны разделяться табуляцией.
 
+# Лямбда-функция, преобразующая список в строку c табуляцией (по умолчанию) между элементами
+reform = lambda lst, separator='\t': separator.join([str(el) for el in lst])
 
-def table(length, height):
+
+def table(length, height, reformat):
     """
     Печатает таблицу умножения размера length * height
     """
-
-    # Лямбда-функция, преобразующая список в строку c табуляцией между элементами
-    reform = lambda str_: '\t'.join([str(el) for el in str_])
 
     for i in range(height + 1):
         row = []
@@ -24,7 +24,8 @@ def table(length, height):
             else:
                 row.append(i * j)
 
-        print(reform(row))
+        print(reformat(row))
 
 
-table(9, 7)
+table(9, 7, reform)
+
